@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>While Loop in Python</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .code-box {
+      background-color: #eef3f8;
+      border-left: 5px solid #2980b9;
+      padding: 12px;
+      margin-top: 10px;
+      font-family: Consolas, monospace;
+      white-space: pre;
+    }
+
+    .output {
+      background-color: #f9f9f9;
+      border-left: 5px solid #27ae60;
+      padding: 10px;
+      margin-top: 8px;
+      font-family: Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>While Loop in Python</h1>
+
+  <!-- Introduction -->
+  <h2>What is a While Loop?</h2>
+  <p>
+    A <strong>while loop</strong> in Python is used to execute a block of code
+    repeatedly as long as a given condition is <strong>true</strong>.
+  </p>
+
+  <!-- Syntax -->
+  <h2>Syntax of While Loop</h2>
+  <div class="code-box">
+while condition:
+    statement
+  </div>
+
+  <p>
+    The loop continues running until the condition becomes false.
+    Proper <strong>indentation</strong> is mandatory in Python.
+  </p>
+
+  <!-- Example 1 -->
+  <h2>Example 1: Print Numbers from 1 to 5</h2>
+  <div class="code-box">
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+  </div>
+
+  <div class="output">
+Output:
+1
+2
+3
+4
+5
+  </div>
+
+  <!-- Explanation -->
+  <h2>How It Works</h2>
+  <ul>
+    <li><code>i = 1</code> initializes the variable</li>
+    <li>Condition <code>i <= 5</code> is checked</li>
+    <li><code>i += 1</code> increments the value</li>
+    <li>Loop stops when condition becomes false</li>
+  </ul>
+
+  <!-- Example 2 -->
+  <h2>Example 2: Print Even Numbers</h2>
+  <div class="code-box">
+i = 2
+while i <= 10:
+    print(i)
+    i += 2
+  </div>
+
+  <div class="output">
+Output:
+2
+4
+6
+8
+10
+  </div>
+
+  <!-- Example 3 -->
+  <h2>Example 3: Countdown Using While Loop</h2>
+  <div class="code-box">
+i = 5
+while i >= 1:
+    print(i)
+    i -= 1
+  </div>
+
+  <div class="output">
+Output:
+5
+4
+3
+2
+1
+  </div>
+
+  <!-- Example 4 -->
+  <h2>Example 4: While Loop with Condition</h2>
+  <div class="code-box">
+i = 1
+while i <= 10:
+    if i % 2 == 0:
+        print(i, "is even")
+    i += 1
+  </div>
+
+  <!-- Infinite Loop -->
+  <h2>Important Note: Infinite Loop</h2>
+  <p>
+    If the condition never becomes false, the loop will run forever.
+  </p>
+
+  <div class="code-box">
+while True:
+    print("This is an infinite loop")
+  </div>
+
+  <!-- Key Points -->
+  <h2>Important Points to Remember</h2>
+  <ul>
+    <li>Used when number of iterations is not known</li>
+    <li>Condition is checked before every iteration</li>
+    <li>Loop variable must be updated manually</li>
+    <li>Wrong condition can cause infinite loops</li>
+  </ul>
+
+  <!-- Conclusion -->
+  <h2>Conclusion</h2>
+  <p>
+    The <strong>while loop</strong> is useful when a task must continue
+    until a condition is met. It provides flexibility but requires careful
+    handling of the loop condition.
+  </p>
+
+</div>
+
+</body>
+</html>

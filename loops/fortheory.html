@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Loop in Python</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .code-box {
+      background-color: #eef3f8;
+      border-left: 5px solid #2980b9;
+      padding: 12px;
+      margin-top: 10px;
+      font-family: Consolas, monospace;
+      white-space: pre;
+    }
+
+    .output {
+      background-color: #f9f9f9;
+      border-left: 5px solid #27ae60;
+      padding: 10px;
+      margin-top: 8px;
+      font-family: Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>For Loop in Python</h1>
+
+  <!-- Introduction -->
+  <h2>What is a For Loop?</h2>
+  <p>
+    A <strong>for loop</strong> in Python is used to repeat a block of code
+    for each item in a sequence such as a list, string, or range of numbers.
+  </p>
+
+  <!-- Syntax -->
+  <h2>Syntax of For Loop</h2>
+  <div class="code-box">
+for variable in sequence:
+    statement
+  </div>
+
+  <p>
+    Python uses <strong>indentation</strong> to define the block of code
+    inside the loop.
+  </p>
+
+  <!-- Example 1 -->
+  <h2>Example 1: Print Numbers from 1 to 5</h2>
+  <div class="code-box">
+for i in range(1, 6):
+    print(i)
+  </div>
+
+  <div class="output">
+Output:
+1
+2
+3
+4
+5
+  </div>
+
+  <!-- Explanation -->
+  <h2>How It Works</h2>
+  <ul>
+    <li><code>range(1, 6)</code> generates numbers from 1 to 5</li>
+    <li>The loop runs once for each number</li>
+    <li><code>i</code> stores the current value</li>
+  </ul>
+
+  <!-- Example 2 -->
+  <h2>Example 2: Loop Through a List</h2>
+  <div class="code-box">
+fruits = ["Apple", "Banana", "Mango"]
+
+for fruit in fruits:
+    print(fruit)
+  </div>
+
+  <div class="output">
+Output:
+Apple
+Banana
+Mango
+  </div>
+
+  <!-- Example 3 -->
+  <h2>Example 3: Print Even Numbers</h2>
+  <div class="code-box">
+for i in range(2, 11, 2):
+    print(i)
+  </div>
+
+  <div class="output">
+Output:
+2
+4
+6
+8
+10
+  </div>
+
+  <!-- Example 4 -->
+  <h2>Example 4: For Loop with Condition</h2>
+  <div class="code-box">
+for i in range(1, 11):
+    if i % 2 == 0:
+        print(i, "is even")
+  </div>
+
+  <!-- Key Points -->
+  <h2>Important Points to Remember</h2>
+  <ul>
+    <li>Used when number of iterations is known</li>
+    <li>Works with lists, strings, tuples, and ranges</li>
+    <li>Indentation is mandatory in Python</li>
+    <li>Cleaner and simpler than many other loops</li>
+  </ul>
+
+  <!-- Conclusion -->
+  <h2>Conclusion</h2>
+  <p>
+    The <strong>for loop</strong> is one of the most commonly used loops in
+    Python. It helps in repeating tasks efficiently and makes code easy
+    to read and understand.
+  </p>
+
+</div>
+
+</body>
+</html>
