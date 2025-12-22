@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 30px;
+      border-left: 5px solid #2980b9;
+      padding-left: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .code-box {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+
+    .note {
+      background: #eaf2f8;
+      padding: 12px;
+      border-left: 5px solid #3498db;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Strings in Python</h1>
+
+    <h2>What is a String?</h2>
+    <p>
+      A <strong>string</strong> in Python is a sequence of characters enclosed
+      inside single quotes (<code>' '</code>), double quotes (<code>" "</code>),
+      or triple quotes (<code>''' '''</code> or <code>""" """</code>).
+    </p>
+
+    <div class="code-box">
+name = "Python"<br>
+city = 'Hyderabad'<br>
+message = """Welcome to Python Programming"""
+    </div>
+
+    <h2>Creating Strings</h2>
+    <ul>
+      <li>Single quotes → <code>'Hello'</code></li>
+      <li>Double quotes → <code>"Hello"</code></li>
+      <li>Triple quotes → used for multi-line strings</li>
+    </ul>
+
+    <div class="code-box">
+text1 = 'Hello'<br>
+text2 = "World"<br>
+text3 = '''This is<br>a multi-line<br>string'''
+    </div>
+
+    <h2>Accessing Characters (Indexing)</h2>
+    <p>
+      Each character in a string has an index. Indexing starts from <strong>0</strong>.
+    </p>
+
+    <div class="code-box">
+word = "Python"<br>
+print(word[0])   # P<br>
+print(word[3])   # h
+    </div>
+
+    <h2>String Slicing</h2>
+    <p>
+      Slicing allows you to extract a portion of a string.
+    </p>
+
+    <div class="code-box">
+word = "Python"<br>
+print(word[0:4])  # Pyth<br>
+print(word[2:])   # thon
+    </div>
+
+    <h2>String Concatenation</h2>
+    <p>
+      Joining two or more strings is called concatenation.
+    </p>
+
+    <div class="code-box">
+first = "Hello"<br>
+second = "Python"<br>
+result = first + " " + second<br>
+print(result)
+    </div>
+
+    <h2>String Length</h2>
+    <p>
+      The <code>len()</code> function is used to find the length of a string.
+    </p>
+
+    <div class="code-box">
+name = "Programming"<br>
+print(len(name))
+    </div>
+
+    <h2>Common String Methods</h2>
+    <ul>
+      <li><code>upper()</code> – converts to uppercase</li>
+      <li><code>lower()</code> – converts to lowercase</li>
+      <li><code>strip()</code> – removes spaces</li>
+      <li><code>replace()</code> – replaces text</li>
+      <li><code>split()</code> – splits string into list</li>
+    </ul>
+
+    <div class="code-box">
+text = "  Python Programming  "<br>
+print(text.upper())<br>
+print(text.strip())<br>
+print(text.replace("Python", "Java"))<br>
+print(text.split())
+    </div>
+
+    <h2>String Immutability</h2>
+    <p>
+      Strings in Python are <strong>immutable</strong>, meaning they cannot be changed after creation.
+    </p>
+
+    <div class="code-box">
+name = "Python"<br>
+name[0] = "J"   # Error
+    </div>
+
+    <div class="note">
+      ✔ To modify a string, you must create a new one.
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>
+      Strings are one of the most commonly used data types in Python.
+      They are easy to use and come with powerful built-in methods
+      that make text processing simple and efficient.
+    </p>
+
+  </div>
+</body>
+</html>
