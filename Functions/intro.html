@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Functions – Detailed Explanation</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      width: 85%;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2980b9;
+      border-left: 5px solid #2980b9;
+      padding-left: 10px;
+      margin-top: 35px;
+    }
+
+    h3 {
+      color: #27ae60;
+      margin-top: 25px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    pre {
+      background: #2d3436;
+      color: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    .note {
+      background: #e8f6f3;
+      border-left: 5px solid #1abc9c;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #2c3e50;
+      color: white;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  Functions in Python – Complete Explanation
+</header>
+
+<div class="container">
+
+  <h2>1. What is a Function?</h2>
+  <p>
+    A <strong>function</strong> in Python is a reusable block of code that performs a specific task.
+    Instead of writing the same code again and again, we define it once and call it whenever needed.
+  </p>
+
+  <div class="note">
+    ✔ Functions help in reducing code duplication and improving readability.
+  </div>
+
+  <h2>2. Why Do We Use Functions?</h2>
+  <ul>
+    <li>Improves code reusability</li>
+    <li>Makes programs easy to understand</li>
+    <li>Reduces code length</li>
+    <li>Helps in debugging and maintenance</li>
+  </ul>
+
+  <h2>3. Syntax of a Function</h2>
+  <p>The basic syntax of defining a function in Python is:</p>
+
+  <pre>
+def function_name(parameters):
+    statements
+    return value
+  </pre>
+
+  <ul>
+    <li><strong>def</strong> → Keyword used to define a function</li>
+    <li><strong>function_name</strong> → Name of the function</li>
+    <li><strong>parameters</strong> → Inputs to the function (optional)</li>
+    <li><strong>return</strong> → Sends output back to the caller (optional)</li>
+  </ul>
+
+  <h2>4. Function Without Parameters</h2>
+  <p>This type of function does not take any input.</p>
+
+  <pre>
+def greet():
+    print("Hello, Welcome to Python Functions")
+
+greet()
+  </pre>
+
+  <div class="note">
+    ✔ The function <strong>greet()</strong> is called without passing any arguments.
+  </div>
+
+  <h2>5. Function With Parameters</h2>
+  <p>Parameters allow us to pass data into a function.</p>
+
+  <pre>
+def greet_user(name):
+    print("Hello", name)
+
+greet_user("Abhinay")
+  </pre>
+
+  <h2>6. Function With Return Statement</h2>
+  <p>
+    The <strong>return</strong> statement sends a value back to the function caller.
+  </p>
+
+  <pre>
+def add(a, b):
+    return a + b
+
+result = add(10, 20)
+print(result)
+  </pre>
+
+  <h2>7. Types of Functions in Python</h2>
+
+  <h3>a) Built-in Functions</h3>
+  <p>Functions already provided by Python.</p>
+  <pre>
+print("Hello")
+len("Python")
+type(10)
+  </pre>
+
+  <h3>b) User-Defined Functions</h3>
+  <p>Functions created by the programmer.</p>
+  <pre>
+def square(num):
+    return num * num
+  </pre>
+
+  <h2>8. Default Arguments</h2>
+  <p>
+    Default arguments allow a function to use predefined values if no value is passed.
+  </p>
+
+  <pre>
+def country(name, nation="India"):
+    print(name, "is from", nation)
+
+country("Abhinay")
+country("Alex", "USA")
+  </pre>
+
+  <h2>9. Keyword Arguments</h2>
+  <p>Arguments passed using parameter names.</p>
+
+  <pre>
+def student(name, age):
+    print(name, age)
+
+student(age=21, name="Abhinay")
+  </pre>
+
+  <h2>10. Advantages of Functions</h2>
+  <ul>
+    <li>Modular programming</li>
+    <li>Better code organization</li>
+    <li>Easy testing and debugging</li>
+    <li>Improved readability</li>
+  </ul>
+
+</div>
+
+<footer>
+  Python Functions | Designed for Easy Learning
+</footer>
+
+</body>
+</html>
