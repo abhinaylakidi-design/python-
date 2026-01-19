@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions in Python - Detailed Explanation</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 6px;
+        }
+
+        code {
+            background-color: #eef1f5;
+            padding: 3px 6px;
+            border-radius: 4px;
+            color: #c7254e;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .note {
+            background-color: #eaf2f8;
+            padding: 12px;
+            border-left: 5px solid #3498db;
+            margin: 15px 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Regular Expressions in Python</h1>
+
+    <!-- INTRODUCTION -->
+    <h2>1. What are Regular Expressions?</h2>
+    <p>
+        Regular Expressions (Regex) are patterns used to match, search, extract,
+        and replace text. In Python, regular expressions are handled using the
+        built-in <code>re</code> module.
+    </p>
+
+    <div class="note">
+        <strong>Uses of Regex:</strong>
+        <ul>
+            <li>Input validation</li>
+            <li>Pattern searching</li>
+            <li>Text extraction</li>
+            <li>Data cleaning</li>
+        </ul>
+    </div>
+
+    <!-- IMPORT -->
+    <h2>2. Importing re Module</h2>
+    <pre>
+import re
+    </pre>
+
+    <!-- FUNCTIONS -->
+    <h2>3. Regex Functions in Python</h2>
+    <table>
+        <tr>
+            <th>Function</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>re.match()</td>
+            <td>Matches pattern at the beginning</td>
+        </tr>
+        <tr>
+            <td>re.search()</td>
+            <td>Searches pattern anywhere in string</td>
+        </tr>
+        <tr>
+            <td>re.findall()</td>
+            <td>Returns all matches as a list</td>
+        </tr>
+        <tr>
+            <td>re.finditer()</td>
+            <td>Returns iterator of match objects</td>
+        </tr>
+        <tr>
+            <td>re.sub()</td>
+            <td>Replaces matched text</td>
+        </tr>
+        <tr>
+            <td>re.split()</td>
+            <td>Splits string using pattern</td>
+        </tr>
+    </table>
+
+    <!-- MATCH -->
+    <h2>4. re.match()</h2>
+    <pre>
+import re
+text = "Python Programming"
+result = re.match("Python", text)
+print(result)
+    </pre>
+
+    <!-- SEARCH -->
+    <h2>5. re.search()</h2>
+    <pre>
+result = re.search("Programming", text)
+print(result.group())
+    </pre>
+
+    <!-- FINDALL -->
+    <h2>6. re.findall()</h2>
+    <pre>
+text = "apple banana apple orange"
+result = re.findall("apple", text)
+print(result)
+    </pre>
+
+    <!-- FINDITER -->
+    <h2>7. re.finditer()</h2>
+    <pre>
+for match in re.finditer("apple", text):
+    print(match.start(), match.group())
+    </pre>
+
+    <!-- SUB -->
+    <h2>8. re.sub()</h2>
+    <pre>
+text = "I like Java"
+result = re.sub("Java", "Python", text)
+print(result)
+    </pre>
+
+    <!-- SPLIT -->
+    <h2>9. re.split()</h2>
+    <pre>
+text = "one,two;three four"
+result = re.split("[,; ]", text)
+print(result)
+    </pre>
+
+    <!-- META CHAR -->
+    <h2>10. Meta Characters</h2>
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Meaning</th>
+        </tr>
+        <tr><td>.</td><td>Any character</td></tr>
+        <tr><td>^</td><td>Start of string</td></tr>
+        <tr><td>$</td><td>End of string</td></tr>
+        <tr><td>*</td><td>0 or more times</td></tr>
+        <tr><td>+</td><td>1 or more times</td></tr>
+        <tr><td>?</td><td>0 or 1 time</td></tr>
+        <tr><td>[]</td><td>Character set</td></tr>
+        <tr><td>()</td><td>Grouping</td></tr>
+        <tr><td>|</td><td>OR operator</td></tr>
+    </table>
+
+    <!-- CHARACTER CLASSES -->
+    <h2>11. Character Classes</h2>
+    <table>
+        <tr>
+            <th>Pattern</th>
+            <th>Description</th>
+        </tr>
+        <tr><td>\d</td><td>Digits</td></tr>
+        <tr><td>\D</td><td>Non-digits</td></tr>
+        <tr><td>\w</td><td>Alphanumeric</td></tr>
+        <tr><td>\W</td><td>Non-alphanumeric</td></tr>
+        <tr><td>\s</td><td>Whitespace</td></tr>
+        <tr><td>\S</td><td>Non-whitespace</td></tr>
+    </table>
+
+    <!-- VALIDATION -->
+    <h2>12. Validation Examples</h2>
+
+    <h3>Email Validation</h3>
+    <pre>
+email = "test@gmail.com"
+pattern = r"^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+
+if re.match(pattern, email):
+    print("Valid Email")
+    </pre>
+
+    <h3>Mobile Number Validation</h3>
+    <pre>
+mobile = "9876543210"
+pattern = r"^[6-9]\d{9}$"
+
+if re.match(pattern, mobile):
+    print("Valid Mobile Number")
+    </pre>
+
+    <!-- GREEDY -->
+    <h2>13. Greedy vs Non-Greedy</h2>
+    <pre>
+text = "<h1>Title</h1>"
+
+print(re.findall("<.*>", text))    # Greedy
+print(re.findall("<.*?>", text))   # Non-Greedy
+    </pre>
+
+    <!-- FLAGS -->
+    <h2>14. Regex Flags</h2>
+    <table>
+        <tr>
+            <th>Flag</th>
+            <th>Description</th>
+        </tr>
+        <tr><td>re.I</td><td>Ignore case</td></tr>
+        <tr><td>re.M</td><td>Multiline</td></tr>
+        <tr><td>re.S</td><td>Dot matches newline</td></tr>
+        <tr><td>re.X</td><td>Verbose</td></tr>
+    </table>
+
+    <!-- SUMMARY -->
+    <h2>15. Summary</h2>
+    <ul>
+        <li>Regex is used for text processing</li>
+        <li>Python uses the <code>re</code> module</li>
+        <li>Powerful for validation and extraction</li>
+        <li>Used in real-world applications</li>
+    </ul>
+
+    <div class="footer">
+        <p>End of Regular Expressions in Python</p>
+    </div>
+
+</div>
+
+</body>
+</html>
