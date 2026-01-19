@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance in Python - Detailed Explanation</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 6px;
+        }
+
+        code {
+            background-color: #eef1f5;
+            padding: 3px 6px;
+            border-radius: 4px;
+            color: #c7254e;
+        }
+
+        .note {
+            background-color: #eaf2f8;
+            padding: 12px;
+            border-left: 5px solid #3498db;
+            margin: 15px 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Inheritance in Python</h1>
+
+    <!-- INTRODUCTION -->
+    <h2>1. What is Inheritance?</h2>
+    <p>
+        Inheritance is an Object-Oriented Programming (OOPS) concept where
+        a <strong>child class</strong> acquires the properties and methods
+        of a <strong>parent class</strong>.
+    </p>
+
+    <div class="note">
+        <strong>Key Idea:</strong>  
+        Inheritance represents an <strong>IS-A relationship</strong>.
+    </div>
+
+    <!-- WHY INHERITANCE -->
+    <h2>2. Why Use Inheritance?</h2>
+    <ul>
+        <li>Code reusability</li>
+        <li>Easy maintenance</li>
+        <li>Logical program structure</li>
+        <li>Supports polymorphism</li>
+        <li>Reduces duplication</li>
+    </ul>
+
+    <!-- BASIC SYNTAX -->
+    <h2>3. Basic Syntax</h2>
+    <pre>
+class Parent:
+    # parent class code
+    pass
+
+class Child(Parent):
+    # child class code
+    pass
+    </pre>
+
+    <!-- SINGLE INHERITANCE -->
+    <h2>4. Single Inheritance</h2>
+    <p>
+        Single inheritance occurs when one child class inherits from one parent class.
+    </p>
+
+    <pre>
+class Vehicle:
+    def start(self):
+        print("Vehicle started")
+
+class Bike(Vehicle):
+    def ride(self):
+        print("Bike is running")
+
+b = Bike()
+b.start()
+b.ride()
+    </pre>
+
+    <!-- MULTIPLE INHERITANCE -->
+    <h2>5. Multiple Inheritance</h2>
+    <p>
+        Multiple inheritance occurs when a child class inherits from more than one parent class.
+    </p>
+
+    <pre>
+class Father:
+    def skill(self):
+        print("Gardening")
+
+class Mother:
+    def hobby(self):
+        print("Cooking")
+
+class Child(Father, Mother):
+    def play(self):
+        print("Playing")
+
+c = Child()
+c.skill()
+c.hobby()
+c.play()
+    </pre>
+
+    <!-- MRO -->
+    <h3>Method Resolution Order (MRO)</h3>
+    <p>
+        MRO decides the order in which parent classes are searched for methods.
+    </p>
+
+    <pre>
+print(Child.mro())
+    </pre>
+
+    <!-- MULTILEVEL -->
+    <h2>6. Multilevel Inheritance</h2>
+    <p>
+        In multilevel inheritance, a class inherits from another derived class.
+    </p>
+
+    <pre>
+class GrandParent:
+    def house(self):
+        print("Has a house")
+
+class Parent(GrandParent):
+    def car(self):
+        print("Has a car")
+
+class Child(Parent):
+    def bike(self):
+        print("Has a bike")
+
+c = Child()
+c.house()
+c.car()
+c.bike()
+    </pre>
+
+    <!-- HIERARCHICAL -->
+    <h2>7. Hierarchical Inheritance</h2>
+    <p>
+        Multiple child classes inherit from a single parent class.
+    </p>
+
+    <pre>
+class Animal:
+    def sound(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def bark(self):
+        print("Bark")
+
+class Cat(Animal):
+    def meow(self):
+        print("Meow")
+
+d = Dog()
+c = Cat()
+
+d.sound()
+d.bark()
+
+c.sound()
+c.meow()
+    </pre>
+
+    <!-- HYBRID -->
+    <h2>8. Hybrid Inheritance</h2>
+    <p>
+        Hybrid inheritance is a combination of more than one type of inheritance.
+    </p>
+
+    <pre>
+class A:
+    def showA(self):
+        print("Class A")
+
+class B(A):
+    def showB(self):
+        print("Class B")
+
+class C(A):
+    def showC(self):
+        print("Class C")
+
+class D(B, C):
+    def showD(self):
+        print("Class D")
+
+d = D()
+d.showA()
+d.showB()
+d.showC()
+d.showD()
+    </pre>
+
+    <!-- SUPER -->
+    <h2>9. super() Function</h2>
+    <p>
+        The <code>super()</code> function is used to access parent class methods or constructors.
+    </p>
+
+    <pre>
+class Parent:
+    def __init__(self):
+        print("Parent constructor")
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        print("Child constructor")
+    </pre>
+
+    <!-- OVERRIDING -->
+    <h2>10. Method Overriding</h2>
+    <p>
+        Method overriding occurs when a child class provides its own
+        implementation of a parent class method.
+    </p>
+
+    <pre>
+class Parent:
+    def show(self):
+        print("Parent method")
+
+class Child(Parent):
+    def show(self):
+        print("Child method")
+
+c = Child()
+c.show()
+    </pre>
+
+    <!-- REAL TIME -->
+    <h2>11. Real-Time Example</h2>
+    <pre>
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def details(self):
+        print(self.name, self.salary)
+
+class Manager(Employee):
+    def __init__(self, name, salary, department):
+        super().__init__(name, salary)
+        self.department = department
+
+    def details(self):
+        super().details()
+        print("Department:", self.department)
+
+m = Manager("Abhinay", 50000, "IT")
+m.details()
+    </pre>
+
+    <!-- SUMMARY -->
+    <h2>12. Summary</h2>
+    <ul>
+        <li>Inheritance allows code reuse</li>
+        <li>Child class can access parent members</li>
+        <li>Python supports multiple inheritance</li>
+        <li>MRO resolves method conflicts</li>
+        <li><code>super()</code> helps call parent methods</li>
+    </ul>
+
+    <div class="footer">
+        <p>End of Inheritance in Python Explanation</p>
+    </div>
+
+</div>
+
+</body>
+</html>

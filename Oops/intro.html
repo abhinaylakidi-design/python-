@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS in Python - Detailed Explanation</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        code {
+            background-color: #eef1f5;
+            padding: 5px;
+            border-radius: 4px;
+            color: #c7254e;
+        }
+
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 6px;
+        }
+
+        .note {
+            background-color: #eaf2f8;
+            padding: 10px;
+            border-left: 5px solid #3498db;
+            margin: 15px 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Object Oriented Programming System (OOPS) in Python</h1>
+
+    <!-- INTRODUCTION -->
+    <h2>1. Introduction to OOPS</h2>
+    <p>
+        Object Oriented Programming System (OOPS) is a programming paradigm that
+        organizes code using <strong>objects</strong> and <strong>classes</strong>.
+        Python supports OOPS, making programs more structured, reusable, and easy to maintain.
+    </p>
+
+    <div class="note">
+        <strong>Why OOPS?</strong>
+        <ul>
+            <li>Code reusability</li>
+            <li>Better structure</li>
+            <li>Easy maintenance</li>
+            <li>Real-world modeling</li>
+        </ul>
+    </div>
+
+    <!-- CLASS -->
+    <h2>2. Class</h2>
+    <p>
+        A <strong>class</strong> is a blueprint for creating objects. It defines
+        variables (attributes) and methods (functions).
+    </p>
+
+    <pre>
+class Student:
+    name = "Abhinay"
+    age = 22
+    </pre>
+
+    <!-- OBJECT -->
+    <h2>3. Object</h2>
+    <p>
+        An <strong>object</strong> is an instance of a class. It represents a real-world entity.
+    </p>
+
+    <pre>
+s1 = Student()
+print(s1.name)
+print(s1.age)
+    </pre>
+
+    <!-- CONSTRUCTOR -->
+    <h2>4. Constructor (__init__)</h2>
+    <p>
+        A constructor is a special method used to initialize object data.
+        It is automatically called when an object is created.
+    </p>
+
+    <pre>
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+s1 = Student("Abhinay", 22)
+print(s1.name, s1.age)
+    </pre>
+
+    <!-- SELF -->
+    <h2>5. self Keyword</h2>
+    <p>
+        The <code>self</code> keyword represents the current object.
+        It is used to access instance variables and methods.
+    </p>
+
+    <pre>
+class Demo:
+    def show(self):
+        print("Hello Python")
+    </pre>
+
+    <!-- ENCAPSULATION -->
+    <h2>6. Encapsulation</h2>
+    <p>
+        Encapsulation is the process of wrapping data and methods together
+        and restricting direct access to variables.
+    </p>
+
+    <pre>
+class Bank:
+    def __init__(self):
+        self.__balance = 1000
+
+    def get_balance(self):
+        return self.__balance
+    </pre>
+
+    <!-- INHERITANCE -->
+    <h2>7. Inheritance</h2>
+    <p>
+        Inheritance allows one class to acquire the properties of another class.
+        It promotes code reuse.
+    </p>
+
+    <pre>
+class Parent:
+    def show(self):
+        print("Parent class")
+
+class Child(Parent):
+    def display(self):
+        print("Child class")
+
+c = Child()
+c.show()
+c.display()
+    </pre>
+
+    <!-- POLYMORPHISM -->
+    <h2>8. Polymorphism</h2>
+    <p>
+        Polymorphism means "many forms". The same method name can have different behaviors.
+    </p>
+
+    <pre>
+class Dog:
+    def sound(self):
+        print("Bark")
+
+class Cat:
+    def sound(self):
+        print("Meow")
+
+for animal in (Dog(), Cat()):
+    animal.sound()
+    </pre>
+
+    <!-- ABSTRACTION -->
+    <h2>9. Abstraction</h2>
+    <p>
+        Abstraction hides implementation details and shows only essential features.
+    </p>
+
+    <pre>
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def speed(self):
+        pass
+
+class Bike(Vehicle):
+    def speed(self):
+        print("Bike speed is 60 km/h")
+    </pre>
+
+    <!-- REAL TIME EXAMPLE -->
+    <h2>10. Real-Time Example</h2>
+    <p>
+        Below is a simple real-world example using a Mobile class.
+    </p>
+
+    <pre>
+class Mobile:
+    def __init__(self, brand, price):
+        self.brand = brand
+        self.price = price
+
+    def details(self):
+        print(self.brand, self.price)
+
+m1 = Mobile("Samsung", 20000)
+m1.details()
+    </pre>
+
+    <!-- SUMMARY -->
+    <h2>11. Summary</h2>
+    <ul>
+        <li>Class is a blueprint</li>
+        <li>Object is an instance of a class</li>
+        <li>Encapsulation protects data</li>
+        <li>Inheritance reuses code</li>
+        <li>Polymorphism allows multiple behaviors</li>
+        <li>Abstraction hides complexity</li>
+    </ul>
+
+    <div class="footer">
+        <p>End of OOPS in Python Explanation</p>
+    </div>
+
+</div>
+
+</body>
+</html>
